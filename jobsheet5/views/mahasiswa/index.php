@@ -1,8 +1,15 @@
 <?php
-//memanggil kelas database
-include '../classes/database.php';
+//memanggil class model database dengan file convig tadi
+include_once '../../config.php';
+include_once '../../controllers/MahasiswaController.php';
+
 //instansiasi class database
-$db = new Database;
+$database= new database;
+$db=$database->getKoneksi();
+
+$mahasiswaController = new MahasiswaController($db);
+$mahasiswa=$mahasiswaController->getAllMahasiswa();
+
 ?>
 
 <head>
@@ -21,6 +28,9 @@ $db = new Database;
                 <th class="table-dark">No</th>
                 <th class="table-dark">NIM</th>
                 <th class="table-dark">Nama</th>
+                <th class="table-dark">Tempat Lahir</th>
+                <th class="table-dark">Jenis Kelamin</th>
+                <th class="table-dark">Agama</th>
                 <th class="table-dark">Alamat</th>
                 <th class="table-dark">Aksi</th>
             </tr>
