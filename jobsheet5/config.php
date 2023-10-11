@@ -5,7 +5,7 @@ class database
     var $host = "localhost";
     var $username = "root";
     var $password = "";
-    var $db = "akademik";
+    var $db = "akademik2";
     var $koneksi;
 
     function getKoneksi()
